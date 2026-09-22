@@ -1,0 +1,911 @@
+/* ==========================================================================
+   Page & Header Background
+   ========================================================================== */
+
+/* Modern gradient background for the page */
+.sapMPage {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+}
+
+.dashboardHeader .sapMTitle {
+    font-size: 1.85rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.025em !important;
+}
+
+.dashboardHeader .sapMText {
+    font-size: 0.95rem !important;
+    color: #64748b !important;
+}
+
+/* ==========================================================================
+   Ultra-Modern GenericTile Overrides
+   ========================================================================== */
+
+/* Container Flex Layout & Gap */
+.dashboardKpiContainer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1.25rem !important;
+}
+
+/* Main Tile Card Overrides */
+.dashboardTile.sapMGT {
+    border-radius: 16px !important;
+    border: 1px solid #ffffff !important;
+    background: #ffffff !important;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 
+                0 8px 10px -6px rgba(15, 23, 42, 0.04) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    min-width: 190px !important;
+    min-height: 145px !important;
+    padding: 0.85rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Hover Elevation Effect */
+.dashboardTile.sapMGT:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.15) !important;
+    cursor: pointer !important;
+}
+
+/* Header & Subheader Text Styling */
+.dashboardTile .sapMGTHeader {
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    font-size: 0.95rem !important;
+}
+
+.dashboardTile .sapMGTSubHdr {
+    color: #64748b !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+}
+
+/* Make Numeric Value Large & Bold */
+.dashboardTile .sapMNCValueInner {
+    font-weight: 800 !important;
+    font-size: 2.2rem !important;
+    letter-spacing: -0.03em !important;
+}
+
+/* Make Icons Larger */
+.dashboardTile .sapMNCScaleIcon {
+    font-size: 1.75rem !important;
+}
+
+/* ==========================================================================
+   Tile-Specific Gradient Top Accent Lines & Color Schemes
+   ========================================================================== */
+
+/* 1. Total Requests (Electric Blue) */
+#totalRequestsTile.dashboardTile {
+    border-top: 5px solid #2563eb !important;
+}
+#totalRequestsTile .sapMNCValueInner, 
+#totalRequestsTile .sapUiIcon {
+    color: #2563eb !important;
+}
+
+/* 2. New Requests (Amber Orange) */
+#newRequestsTile.dashboardTile {
+    border-top: 5px solid #f59e0b !important;
+}
+#newRequestsTile .sapMNCValueInner, 
+#newRequestsTile .sapUiIcon {
+    color: #d97706 !important;
+}
+
+/* 3. In Progress (Vivid Cyan) */
+#inProgressRequestsTile.dashboardTile {
+    border-top: 5px solid #06b6d4 !important;
+}
+#inProgressRequestsTile .sapMNCValueInner, 
+#inProgressRequestsTile .sapUiIcon {
+    color: #0284c7 !important;
+}
+
+/* 4. Resolved (Emerald Green) */
+#resolvedRequestsTile.dashboardTile {
+    border-top: 5px solid #10b981 !important;
+}
+#resolvedRequestsTile .sapMNCValueInner, 
+#resolvedRequestsTile .sapUiIcon {
+    color: #059669 !important;
+}
+
+/* 5. Closed (Deep Indigo) */
+#closedRequestsTile.dashboardTile {
+    border-top: 5px solid #6366f1 !important;
+}
+#closedRequestsTile .sapMNCValueInner, 
+#closedRequestsTile .sapUiIcon {
+    color: #4f46e5 !important;
+}
+
+/* ==========================================================================
+   Quick Actions Section Styling
+   ========================================================================== */
+
+.sapMPanel {
+    border-radius: 16px !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05) !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+}
+
+.sapMPanelHdr {
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    font-size: 1.1rem !important;
+    padding-left: 1rem !important;
+}
+
+.quickActionContainer {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem;
+}
+
+.quickActionContainer .sapMBtn {
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    height: 2.6rem !important;
+}
+
+.quickActionContainer .sapMBtnEmphasized {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+}
+
+.quickActionContainer .sapMBtnEmphasized:hover {
+    background-color: #1d4ed8 !important;
+}
+
+```css
+/* =========================================================
+   CREATE SERVICE REQUEST
+   Modern Enterprise UI
+   ========================================================= */
+
+/* Page background */
+.createRequestPage {
+    background: #f6f8fb;
+}
+
+/* Main content area */
+.createRequestContent {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+
+/* =========================================================
+   CREATE REQUEST PANEL
+   ========================================================= */
+
+.createRequestPanel {
+    border: none !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(31, 41, 55, 0.08);
+}
+
+/* Panel header */
+.createRequestPanel .sapMPanelHdr {
+    height: auto;
+    min-height: 64px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+    border-bottom: 1px solid #edf0f4;
+
+    color: #1f2937;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* Panel content */
+.createRequestPanel .sapMPanelContent {
+    padding: 0 !important;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+   ========================================================= */
+
+.createRequestForm {
+    padding: 1.75rem 2rem 2rem;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.createRequestPanel .sapMLabel {
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.createRequestPanel .sapMLabelRequired:before {
+    color: #e56b5d;
+}
+
+
+/* =========================================================
+   INPUTS / TEXTAREA / SELECT / DATE PICKER
+   ========================================================= */
+
+.createRequestPanel .sapMInputBase,
+.createRequestPanel .sapMTextArea,
+.createRequestPanel .sapMSlt {
+    width: 100%;
+}
+
+/* Input containers */
+.createRequestPanel .sapMInputBaseContentWrapper,
+.createRequestPanel .sapMSlt {
+    min-height: 46px;
+
+    border: 1px solid #d8dde6;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* Textarea */
+.createRequestPanel .sapMTextArea .sapMInputBaseContentWrapper {
+    min-height: 120px;
+    border-radius: 10px;
+}
+
+/* Textarea inner area */
+.createRequestPanel .sapMTextAreaInner {
+    min-height: 110px;
+    padding: 0.75rem 0.85rem;
+
+    border: none;
+    background: transparent;
+
+    color: #1f2937;
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    resize: vertical;
+}
+
+
+/* Input text */
+.createRequestPanel .sapMInputBaseInner {
+    height: 44px;
+    padding: 0 0.85rem;
+
+    color: #1f2937;
+    font-size: 0.9rem;
+
+    background: transparent;
+}
+
+/* Placeholder */
+.createRequestPanel
+.sapMInputBaseInner::placeholder,
+.createRequestPanel
+.sapMTextAreaInner::placeholder {
+    color: #9ca3af;
+}
+
+
+/* Select */
+.createRequestPanel .sapMSltLabel {
+    height: 44px;
+    line-height: 44px;
+
+    padding-left: 0.85rem;
+
+    color: #1f2937;
+    font-size: 0.9rem;
+}
+
+.createRequestPanel .sapMSltArrow {
+    width: 42px;
+    line-height: 44px;
+}
+
+
+/* =========================================================
+   FOCUS STATES
+   ========================================================= */
+
+.createRequestPanel
+.sapMInputBaseContentWrapper:focus-within,
+
+.createRequestPanel
+.sapMSlt:focus-within,
+
+.createRequestPanel
+.sapMInputBaseContentWrapper.sapMFocus,
+
+.createRequestPanel
+.sapMSlt.sapMSltFocused {
+    border-color: #e56b5d !important;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 107, 93, 0.12);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HOVER STATES
+   ========================================================= */
+
+.createRequestPanel
+.sapMInputBaseContentWrapper:hover,
+
+.createRequestPanel
+.sapMSlt:hover {
+    border-color: #b8c0cc;
+}
+
+
+/* =========================================================
+   FIELD SPACING
+   ========================================================= */
+
+.createRequestPanel .sapUiSmallMarginTop {
+    margin-top: 1.35rem !important;
+}
+
+.createRequestPanel .sapUiTinyMarginBottom {
+    margin-bottom: 0.15rem !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.createRequestPage .sapMPageFooter .sapMTB {
+    min-height: 64px;
+
+    padding: 0 1.5rem;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid #e8ebf0;
+
+    box-shadow:
+        0 -4px 18px rgba(31, 41, 55, 0.06);
+}
+
+
+/* Footer buttons */
+.createRequestPage .sapMPageFooter .sapMBtn {
+    margin-left: 0.5rem;
+}
+
+
+/* Cancel button */
+.createRequestPage .sapMPageFooter
+.sapMBtn:not(.sapMBtnEmphasized) {
+    border-radius: 9px;
+}
+
+
+/* Create button */
+.createRequestPage .sapMPageFooter
+.sapMBtnEmphasized {
+    min-width: 170px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #e56b5d !important;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 4px 12px rgba(229, 107, 93, 0.22);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.createRequestPage .sapMPageFooter
+.sapMBtnEmphasized:hover {
+    background: #d85f52 !important;
+
+    box-shadow:
+        0 6px 16px rgba(229, 107, 93, 0.28);
+}
+
+.createRequestPage .sapMPageFooter
+.sapMBtnEmphasized:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   PAGE TITLE / NAVIGATION
+   ========================================================= */
+
+.createRequestPage .sapMPageHeader .sapMBar {
+    background: #ffffff;
+    border-bottom: 1px solid #edf0f4;
+    box-shadow: none;
+}
+
+.createRequestPage .sapMPageHeader .sapMTitle {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+
+/* Back button */
+.createRequestPage .sapMPageHeader .sapMBtn {
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .createRequestContent {
+        padding: 1rem 0.75rem 2rem;
+    }
+
+    .createRequestPanel {
+        border-radius: 14px !important;
+    }
+
+    .createRequestForm {
+        padding: 1.25rem;
+    }
+
+    .createRequestPanel .sapMPanelHdr {
+        padding: 1rem 1.25rem;
+    }
+
+    .createRequestPage .sapMPageFooter .sapMTB {
+        padding: 0 0.75rem;
+    }
+
+    .createRequestPage .sapMPageFooter
+    .sapMBtnEmphasized {
+        min-width: 145px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .createRequestContent {
+        padding: 0.5rem;
+    }
+
+    .createRequestPanel {
+        border-radius: 12px !important;
+    }
+
+    .createRequestForm {
+        padding: 1rem;
+    }
+
+    .createRequestPage .sapMPageFooter
+    .sapMBtnEmphasized {
+        min-width: 135px;
+    }
+}
+
+```css
+/* =========================================================
+   REQUEST DETAILS PAGE
+   Modern Enterprise / ITSM UI
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Page
+   --------------------------------------------------------- */
+
+.requestDetailsPage {
+    background: #f6f8fb;
+}
+
+.requestDetailsPage .sapMPageHeader .sapMBar {
+    background: #ffffff;
+    border-bottom: 1px solid #edf0f4;
+    box-shadow: none;
+}
+
+.requestDetailsPage .sapMPageHeader .sapMTitle {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   Main Content
+   --------------------------------------------------------- */
+
+.requestDetailsContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+
+/* ---------------------------------------------------------
+   Request Header
+   --------------------------------------------------------- */
+
+.requestDetailsHeader {
+    background: #ffffff;
+    border: none !important;
+    border-radius: 18px;
+    padding: 0.5rem 0;
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(31, 41, 55, 0.08);
+}
+
+/* Request ID */
+.requestDetailsHeader .sapMOHTitle {
+    color: #1f2937;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Request title */
+.requestDetailsHeader .sapMOHIntro {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+/* Priority number */
+.requestDetailsHeader .sapMObjectNumberText {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Priority unit */
+.requestDetailsHeader .sapMObjectNumberUnit {
+    color: #6b7280;
+    font-size: 0.75rem;
+}
+
+/* Header attributes */
+.requestDetailsHeader .sapMObjectAttributeTitle {
+    color: #6b7280;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.requestDetailsHeader .sapMObjectAttributeText {
+    color: #1f2937;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   Status / Priority
+   --------------------------------------------------------- */
+
+.requestDetailsHeader .sapMObjStatus {
+    margin-right: 0.75rem;
+    margin-top: 0.4rem;
+}
+
+.requestDetailsHeader .sapMObjStatusText {
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.requestDetailsHeader .sapMObjStatusTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+
+/* ---------------------------------------------------------
+   Panels / Cards
+   --------------------------------------------------------- */
+
+.requestDetailsPanel {
+    border: none !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 6px 24px rgba(31, 41, 55, 0.06);
+}
+
+/* Panel header */
+.requestDetailsPanel .sapMPanelHdr {
+    height: auto;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 1rem 1.25rem;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #edf0f4;
+
+    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Panel body */
+.requestDetailsPanel .sapMPanelContent {
+    padding: 0 !important;
+    background: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Information Section
+   --------------------------------------------------------- */
+
+.requestInformationContent {
+    padding: 1.35rem 1.5rem 1.5rem;
+}
+
+/* Labels */
+.requestInformationContent .sapMLabel {
+    display: block;
+
+    color: #6b7280;
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* Description / Resolution text */
+.requestInformationContent .sapMText {
+    color: #374151;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   Action Section
+   --------------------------------------------------------- */
+
+.requestActionsContainer {
+    padding: 1.25rem 1.5rem;
+}
+
+/* Buttons */
+.requestActionsContainer .sapMBtn {
+    margin-right: 0.6rem;
+    margin-bottom: 0.5rem;
+
+    min-width: 110px;
+
+    border-radius: 9px;
+}
+
+/* Default action buttons */
+.requestActionsContainer
+.sapMBtn:not(.sapMBtnEmphasized) {
+    border: 1px solid #d8dde6;
+    background: #ffffff;
+
+    color: #374151;
+}
+
+/* Default hover */
+.requestActionsContainer
+.sapMBtn:not(.sapMBtnEmphasized):hover {
+    border-color: #e56b5d;
+    background: #fff8f7;
+    color: #d85f52;
+}
+
+
+/* Primary action */
+.requestActionsContainer
+.sapMBtnEmphasized {
+    border: none;
+
+    background: #e56b5d !important;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 4px 12px rgba(229, 107, 93, 0.22);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.requestActionsContainer
+.sapMBtnEmphasized:hover {
+    background: #d85f52 !important;
+
+    box-shadow:
+        0 6px 16px rgba(229, 107, 93, 0.28);
+}
+
+.requestActionsContainer
+.sapMBtnEmphasized:active {
+    transform: translateY(1px);
+}
+
+
+/* ---------------------------------------------------------
+   Comments
+   --------------------------------------------------------- */
+
+.requestCommentsList {
+    background: #ffffff;
+}
+
+/* Individual comment */
+.requestCommentsList .sapMLIB {
+    border-bottom: 1px solid #edf0f4;
+    background: #ffffff;
+}
+
+.requestCommentsList .sapMLIB:last-child {
+    border-bottom: none;
+}
+
+.requestCommentItem {
+    padding: 1.15rem 1.5rem;
+}
+
+/* Author */
+.requestCommentItem .sapMTitle {
+    color: #1f2937;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Date */
+.requestCommentItem .commentDate {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+/* Comment body */
+.requestCommentItem .commentText {
+    display: block;
+
+    margin-top: 0.45rem;
+
+    color: #4b5563;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   Empty Comments State
+   --------------------------------------------------------- */
+
+.requestCommentsList
+.sapMListNoData {
+    padding: 2rem;
+
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+
+/* ---------------------------------------------------------
+   Page Spacing
+   --------------------------------------------------------- */
+
+.requestDetailsContent
+.sapUiMediumMarginTop {
+    margin-top: 1.25rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .requestDetailsContent {
+        padding: 1rem 0.75rem 2rem;
+    }
+
+    .requestDetailsHeader {
+        border-radius: 14px;
+    }
+
+    .requestDetailsPanel {
+        border-radius: 14px !important;
+    }
+
+    .requestInformationContent {
+        padding: 1.1rem;
+    }
+
+    .requestActionsContainer {
+        padding: 1rem;
+    }
+
+    .requestActionsContainer .sapMBtn {
+        min-width: 100px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Small Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .requestDetailsContent {
+        padding: 0.5rem;
+    }
+
+    .requestDetailsHeader {
+        border-radius: 12px;
+    }
+
+    .requestDetailsPanel {
+        border-radius: 12px !important;
+    }
+
+    .requestDetailsHeader .sapMOHTitle {
+        font-size: 1.25rem;
+    }
+
+    .requestInformationContent {
+        padding: 1rem;
+    }
+
+    .requestCommentItem {
+        padding: 1rem;
+    }
+
+    .requestActionsContainer .sapMBtn {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+

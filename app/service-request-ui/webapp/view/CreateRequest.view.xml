@@ -1,0 +1,138 @@
+<mvc:View
+    controllerName="com.mandeep.servicerequestui.controller.CreateRequest"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        title="Create Service Request"
+        showNavButton="true"
+        navButtonPress=".onCancel"
+    >
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Panel
+                    headerText="Service Request Details"
+                    class="createRequestPanel"
+                >
+                    <VBox class="sapUiMediumMargin">
+                        <!-- Title -->
+                        <Label
+                            text="Request Title"
+                            required="true"
+                        />
+                        <Input
+                            id="titleInput"
+                            placeholder="Enter request title"
+                            maxLength="150"
+                            value="{view>/title}"
+                            class="sapUiTinyMarginBottom"
+                        />
+                        <!-- Description -->
+                        <Label
+                            text="Description"
+                            required="true"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <TextArea
+                            id="descriptionInput"
+                            placeholder="Describe the issue or request"
+                            rows="5"
+                            maxLength="1000"
+                            value="{view>/description}"
+                            class="sapUiTinyMarginBottom"
+                        />
+                        <!-- Requester -->
+                        <Label
+                            text="Requester"
+                            required="true"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <Input
+                            id="requesterInput"
+                            placeholder="Enter requester name"
+                            maxLength="100"
+                            value="{view>/requester}"
+                            class="sapUiTinyMarginBottom"
+                        />
+                        <!-- Category -->
+                        <Label
+                            text="Category"
+                            required="true"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <Select
+                            id="categorySelect"
+                            width="100%"
+                            selectedKey="{view>/categoryId}"
+                            items="{ path: '/Categories', sorter: { path: 'name', descending: false } }"
+                            class="sapUiTinyMarginBottom"
+                        >
+                            <core:Item
+                                key="{ID}"
+                                text="{name}"
+                            />
+                        </Select>
+                        <!-- Priority -->
+                        <Label
+                            text="Priority"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <Select
+                            id="prioritySelect"
+                            width="100%"
+                            selectedKey="{view>/priority}"
+                            class="sapUiTinyMarginBottom"
+                        >
+                            <core:Item
+                                key="LOW"
+                                text="Low"
+                            />
+                            <core:Item
+                                key="MEDIUM"
+                                text="Medium"
+                            />
+                            <core:Item
+                                key="HIGH"
+                                text="High"
+                            />
+                            <core:Item
+                                key="CRITICAL"
+                                text="Critical"
+                            />
+                        </Select>
+                        <!-- Due Date -->
+                        <Label
+                            text="Due Date"
+                            class="sapUiSmallMarginTop"
+                        />
+                        <DatePicker
+                            id="dueDatePicker"
+                            width="100%"
+                            value="{view>/dueDate}"
+                            displayFormat="dd/MM/yyyy"
+                            valueFormat="yyyy-MM-dd"
+                            placeholder="Select due date"
+                        />
+                    </VBox>
+                </Panel>
+            </VBox>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Cancel"
+                    icon="sap-icon://decline"
+                    press=".onCancel"
+                />
+                <Button
+                    text="Create Request"
+                    type="Emphasized"
+                    icon="sap-icon://add-document"
+                    press=".onCreateRequest"
+                />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,0 +1,23 @@
+{
+  "generationParameters": {
+    "generationDate": "Mon Sep 21 2026 13:17:12 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "Local CAP",
+    "metadataFilename": "",
+    "serviceUrl": "http://localhost:4004/service-requests/",
+    "appName": "service-request-ui",
+    "appTitle": "IT Service Request Management",
+    "appDescription": "IT Service Request Management Application Using SAP UI5 Framework.",
+    "appNamespace": "com.mandeep",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.152.0",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.32.0",
+    "template": "Basic V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/service-request-ui/webapp/index.html"
+  }
+}

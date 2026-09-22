@@ -1,0 +1,104 @@
+<mvc:View
+    controllerName="com.mandeep.servicerequestui.controller.Requests"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        title="Service Requests"
+        showNavButton="true"
+        navButtonPress=".onBack"
+    >
+        <headerContent>
+            <Button
+                icon="sap-icon://refresh"
+                tooltip="Refresh"
+                press=".onRefresh"
+            />
+            <Button
+                text="Create Request"
+                type="Emphasized"
+                icon="sap-icon://add-document"
+                press=".onCreateRequest"
+            />
+        </headerContent>
+        <content>
+            <Table
+                id="requestsTable"
+                class="requestTable sapUiResponsiveMargin"
+                width="auto"
+                growing="true"
+                growingThreshold="20"
+                growingScrollToLoad="true"
+                items="{ path: '/Requests', sorter: { path: 'requestId', descending: false } }"
+            >
+                <columns>
+                    <Column>
+                        <Text text="Request ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Title" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Requester" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Priority" />
+                    </Column>
+                    <Column>
+                        <Text text="Status" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text text="Assigned To" />
+                    </Column>
+                    <Column
+                        width="5rem"
+                        hAlign="Center"
+                    >
+                        <Text text="Action" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        press=".onRequestPress"
+                    >
+                        <cells>
+                            <ObjectIdentifier title="{requestId}" />
+                            <Text
+                                text="{title}"
+                                maxLines="2"
+                            />
+                            <Text text="{requester}" />
+                            <ObjectStatus
+                                text="{priority}"
+                                state="{ path: 'priority', formatter: '.formatter.priorityState' }"
+                            />
+                            <ObjectStatus
+                                text="{status}"
+                                state="{ path: 'status', formatter: '.formatter.statusState' }"
+                            />
+                            <Text
+                                text="{ path: 'assignedTo', formatter: '.formatter.emptyValue' }"
+                            />
+                            <Button
+                                icon="sap-icon://navigation-right-arrow"
+                                type="Transparent"
+                                tooltip="View Details"
+                                press=".onRequestPress"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

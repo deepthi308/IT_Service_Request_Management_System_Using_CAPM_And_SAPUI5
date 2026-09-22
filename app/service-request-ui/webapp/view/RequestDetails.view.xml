@@ -1,0 +1,144 @@
+<mvc:View
+    controllerName="com.mandeep.servicerequestui.controller.RequestDetails"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        title="Request Details"
+        showNavButton="true"
+        navButtonPress=".onBack"
+    >
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <!-- Request Header -->
+                <ObjectHeader
+                    title="{requestId}"
+                    intro="{title}"
+                    number="{priority}"
+                    numberUnit="Priority"
+                >
+                    <attributes>
+                        <ObjectAttribute
+                            title="Requester"
+                            text="{requester}"
+                        />
+                        <ObjectAttribute
+                            title="Assigned To"
+                            text="{ path: 'assignedTo', formatter: '.formatter.emptyValue' }"
+                        />
+                        <ObjectAttribute
+                            title="Due Date"
+                            text="{ path: 'dueDate', formatter: '.formatter.formatDate' }"
+                        />
+                    </attributes>
+                    <statuses>
+                        <ObjectStatus
+                            title="Priority"
+                            text="{priority}"
+                            state="{ path: 'priority', formatter: '.formatter.priorityState' }"
+                        />
+                        <ObjectStatus
+                            title="Status"
+                            text="{status}"
+                            state="{ path: 'status', formatter: '.formatter.statusState' }"
+                        />
+                    </statuses>
+                </ObjectHeader>
+                <!-- Request Information -->
+                <Panel
+                    headerText="Request Information"
+                    class="sapUiMediumMarginTop"
+                >
+                    <VBox class="sapUiSmallMargin">
+                        <Label
+                            text="Description"
+                            design="Bold"
+                        />
+                        <Text
+                            text="{description}"
+                            wrapping="true"
+                            class="sapUiTinyMarginTop sapUiSmallMarginBottom"
+                        />
+                        <Label
+                            text="Resolution Notes"
+                            design="Bold"
+                        />
+                        <Text
+                            text="{ path: 'resolutionNotes', formatter: '.formatter.emptyValue' }"
+                            wrapping="true"
+                            class="sapUiTinyMarginTop"
+                        />
+                    </VBox>
+                </Panel>
+                <!-- Request Actions -->
+                <Panel
+                    headerText="Request Actions"
+                    class="sapUiMediumMarginTop"
+                >
+                    <HBox
+                        wrap="Wrap"
+                        class="quickActionContainer sapUiSmallMargin"
+                    >
+                        <Button
+                            text="Assign"
+                            icon="sap-icon://employee"
+                            type="Default"
+                            visible="{= ${status} === 'NEW' }"
+                            press=".onAssignRequest"
+                        />
+                        <Button
+                            text="Start"
+                            icon="sap-icon://begin"
+                            type="Default"
+                            visible="{= ${status} === 'ASSIGNED' }"
+                            press=".onStartRequest"
+                        />
+                        <Button
+                            text="Resolve"
+                            icon="sap-icon://complete"
+                            type="Emphasized"
+                            visible="{= ${status} === 'IN_PROGRESS' }"
+                            press=".onResolveRequest"
+                        />
+                        <Button
+                            text="Close"
+                            icon="sap-icon://locked"
+                            type="Default"
+                            visible="{= ${status} === 'RESOLVED' }"
+                            press=".onCloseRequest"
+                        />
+                    </HBox>
+                </Panel>
+                <!-- Comments -->
+                <Panel
+                    headerText="Comments"
+                    class="sapUiMediumMarginTop"
+                >
+                    <List
+                        id="commentsList"
+                        items="{ path: 'comments' }"
+                    >
+                        <CustomListItem>
+                            <VBox class="sapUiSmallMargin">
+                                <HBox justifyContent="SpaceBetween">
+                                    <Title
+                                        text="{author}"
+                                        level="H5"
+                                    />
+                                    <Text
+                                        text="{ path: 'commentDate', formatter: '.formatter.formatDate' }"
+                                    />
+                                </HBox>
+                                <Text
+                                    text="{comment}"
+                                    wrapping="true"
+                                    class="sapUiTinyMarginTop"
+                                />
+                            </VBox>
+                        </CustomListItem>
+                    </List>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,143 @@
+<mvc:View
+    controllerName="com.mandeep.servicerequestui.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        title="IT Service Request Management"
+        showHeader="true"
+    >
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <!-- Header -->
+                <VBox class="dashboardHeader sapUiMediumMarginBottom">
+                    <Title
+                        text="IT Service Request Management"
+                        level="H1"
+                    />
+
+                    <Text
+                        text="Monitor and manage employee IT service requests"
+                        class="sapUiTinyMarginTop"
+                    />
+                </VBox>
+
+                <!-- KPI Tiles -->
+                <HBox
+                    wrap="Wrap"
+                    class="dashboardKpiContainer"
+                >
+                    <!-- Total Requests -->
+                    <GenericTile
+                        id="totalRequestsTile"
+                        class="dashboardTile"
+                        header="Total Requests"
+                        subheader="All service requests"
+                        press=".onViewRequests"
+                    >
+                        <TileContent>
+                            <NumericContent
+                                value="{dashboard>/total}"
+                                icon="sap-icon://customer-order-entry"
+                                valueColor="Neutral"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <!-- New Requests -->
+                    <GenericTile
+                        id="newRequestsTile"
+                        class="dashboardTile"
+                        header="New Requests"
+                        subheader="Awaiting assignment"
+                        press=".onViewNewRequests"
+                    >
+                        <TileContent>
+                            <NumericContent
+                                value="{dashboard>/new}"
+                                icon="sap-icon://pending"
+                                valueColor="Critical"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <!-- In Progress -->
+                    <GenericTile
+                        id="inProgressRequestsTile"
+                        class="dashboardTile"
+                        header="In Progress"
+                        subheader="Currently being handled"
+                        press=".onViewInProgressRequests"
+                    >
+                        <TileContent>
+                            <NumericContent
+                                value="{dashboard>/inProgress}"
+                                icon="sap-icon://process"
+                                valueColor="Neutral"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <!-- Resolved -->
+                    <GenericTile
+                        id="resolvedRequestsTile"
+                        class="dashboardTile"
+                        header="Resolved"
+                        subheader="Successfully resolved"
+                        press=".onViewResolvedRequests"
+                    >
+                        <TileContent>
+                            <NumericContent
+                                value="{dashboard>/resolved}"
+                                icon="sap-icon://sys-enter-2"
+                                valueColor="Good"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <!-- Closed -->
+                    <GenericTile
+                        id="closedRequestsTile"
+                        class="dashboardTile"
+                        header="Closed"
+                        subheader="Completed requests"
+                        press=".onViewClosedRequests"
+                    >
+                        <TileContent>
+                            <NumericContent
+                                value="{dashboard>/closed}"
+                                icon="sap-icon://locked"
+                                valueColor="Good"
+                            />
+                        </TileContent>
+                    </GenericTile>
+                </HBox>
+
+                <!-- Quick Actions -->
+                <Panel
+                    headerText="Quick Actions"
+                    class="sapUiMediumMarginTop"
+                >
+                    <HBox
+                        wrap="Wrap"
+                        class="quickActionContainer"
+                    >
+                        <Button
+                            text="View Service Requests"
+                            type="Emphasized"
+                            icon="sap-icon://list"
+                            press=".onViewAllRequests"
+                        />
+
+                        <Button
+                            text="Create Service Request"
+                            type="Default"
+                            icon="sap-icon://add-document"
+                            press=".onCreateRequest"
+                        />
+                    </HBox>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
